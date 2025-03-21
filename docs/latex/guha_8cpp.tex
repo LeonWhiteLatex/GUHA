@@ -1,0 +1,292 @@
+\doxysection{Файл guha.\+cpp}
+\label{guha_8cpp}\index{guha.cpp@{guha.cpp}}
+{\ttfamily \#include \char`\"{}guha.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$random$>$}\newline
+Граф включаемых заголовочных файлов для guha.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=303pt]{guha_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Классы}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ noded}
+\begin{DoxyCompactList}\small\item\em Собиратель совпадений \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ float $>$ \textbf{ norm} (std\+::vector$<$ float $>$ v)
+\item 
+float \textbf{ FIMPLE} (float a, float b)
+\item 
+int \textbf{ random\+\_\+num} (int a, int b)
+\item 
+void \textbf{ mask\+\_\+gen} (std\+::vector$<$ std\+::string $>$ n)
+\item 
+void \textbf{ rnd} (std\+::vector$<$ std\+::string $>$ a, int o)
+\item 
+bool \textbf{ run\+\_\+assoc} (int a, int b)
+\item 
+void \textbf{ guha} (unsigned int a)
+\end{DoxyCompactItemize}
+\doxysubsection*{Переменные}
+\begin{DoxyCompactItemize}
+\item 
+float \textbf{ all} =0.\+2
+\item 
+float \textbf{ character} =3
+\item 
+float \textbf{ depends} =1.\+5
+\item 
+std\+::vector$<$ std\+::string $>$ \textbf{ rules} =\{\}
+\item 
+std\+::vector$<$ std\+::string $>$ \textbf{ names} =\{\}
+\item 
+std\+::vector$<$ int $>$ \textbf{ nodes}
+\item 
+std\+::vector$<$ int $>$ \textbf{ msk} =\{1, 2, 4\}
+\item 
+std\+::vector$<$ \textbf{ noded} $>$ \textbf{ assoc}
+\item 
+std\+::random\+\_\+device \textbf{ rd}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Функции}
+\mbox{\label{guha_8cpp_a8b668b795173400553446a1a065bc6c7}} 
+\index{guha.cpp@{guha.cpp}!norm@{norm}}
+\index{norm@{norm}!guha.cpp@{guha.cpp}}
+\doxysubsubsection{norm()}
+{\footnotesize\ttfamily std\+::vector$<$float$>$ norm (\begin{DoxyParamCaption}\item[{std\+::vector$<$ float $>$}]{v }\end{DoxyParamCaption})}
+
+Функция нормализации вектора 
+\begin{DoxyParams}{Аргументы}
+{\em v} & -\/ нормализуемый вектор \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Вектор, сумма членов которого равна 1 
+\end{DoxyReturn}
+
+
+См. определение в файле guha.\+cpp строка 5
+
+\mbox{\label{guha_8cpp_a33e0a2e5cb113bf94b12449589d70f88}} 
+\index{guha.cpp@{guha.cpp}!FIMPLE@{FIMPLE}}
+\index{FIMPLE@{FIMPLE}!guha.cpp@{guha.cpp}}
+\doxysubsubsection{FIMPLE()}
+{\footnotesize\ttfamily float FIMPLE (\begin{DoxyParamCaption}\item[{float}]{a,  }\item[{float}]{b }\end{DoxyParamCaption})}
+
+Импликационная функция FIMPLE 
+\begin{DoxyParams}{Аргументы}
+{\em a} & -\/ числитель \\
+\hline
+{\em b} & -\/ добавка к знаменателю \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Результат деления a на сумму a и b, если a больше \doxyref{порога}{стр.}{guha_8hpp_a58d6373a15f6173120235e9c4e50d4d6}, иначе 0. 
+\end{DoxyReturn}
+
+
+См. определение в файле guha.\+cpp строка 16
+
+\mbox{\label{guha_8cpp_ad56442cc2db858683e8bce58ff8f4a94}} 
+\index{guha.cpp@{guha.cpp}!random\_num@{random\_num}}
+\index{random\_num@{random\_num}!guha.cpp@{guha.cpp}}
+\doxysubsubsection{random\_num()}
+{\footnotesize\ttfamily int random\+\_\+num (\begin{DoxyParamCaption}\item[{int}]{a,  }\item[{int}]{b }\end{DoxyParamCaption})}
+
+Функция случайных чисел 
+\begin{DoxyParams}{Аргументы}
+{\em a} & -\/ Минимум \\
+\hline
+{\em b} & -\/ Максимум \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Случайное число от минимума до максимума 
+\end{DoxyReturn}
+
+
+См. определение в файле guha.\+cpp строка 125
+
+\mbox{\label{guha_8cpp_aa4212745d229ec5541bfd791d12b82c3}} 
+\index{guha.cpp@{guha.cpp}!mask\_gen@{mask\_gen}}
+\index{mask\_gen@{mask\_gen}!guha.cpp@{guha.cpp}}
+\doxysubsubsection{mask\_gen()}
+{\footnotesize\ttfamily void mask\+\_\+gen (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::string $>$}]{n }\end{DoxyParamCaption})}
+
+Генератор масок по названиям атрибутов. Функция вносит ввод в вектор \doxyref{имен}{стр.}{guha_8hpp_a9c4192866025823ecd5592526c757c0b} и формирует маски в векторе \doxyref{масок}{стр.}{guha_8hpp_a36f8a4502cf87d61df8cdb67be72c63e}. 
+\begin{DoxyParams}{Аргументы}
+{\em n} & -\/ Набор строк названий масок \\
+\hline
+\end{DoxyParams}
+
+
+См. определение в файле guha.\+cpp строка 134
+
+\mbox{\label{guha_8cpp_a706f0868409806d55a55c8be6dd29485}} 
+\index{guha.cpp@{guha.cpp}!rnd@{rnd}}
+\index{rnd@{rnd}!guha.cpp@{guha.cpp}}
+\doxysubsubsection{rnd()}
+{\footnotesize\ttfamily void rnd (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::string $>$}]{a,  }\item[{int}]{o }\end{DoxyParamCaption})}
+
+Генератор случайных объектов. Функция задействует \doxyref{генерацию масок}{стр.}{guha_8hpp_ac89c7afa72cbfb2d471f47c2b7712421} и формирует некоторое количество объектов для сгенерированных масок в \doxyref{наборе объектов}{стр.}{guha_8hpp_a2093b3404f53534a4a86026be2b4e767}. 
+\begin{DoxyParams}{Аргументы}
+{\em a} & -\/ Набор строк (названия масок) \\
+\hline
+{\em o} & -\/ Количество объектов \\
+\hline
+\end{DoxyParams}
+
+
+См. определение в файле guha.\+cpp строка 141
+
+\mbox{\label{guha_8cpp_aa88a47886764eacb83ae682a8d1acc23}} 
+\index{guha.cpp@{guha.cpp}!run\_assoc@{run\_assoc}}
+\index{run\_assoc@{run\_assoc}!guha.cpp@{guha.cpp}}
+\doxysubsubsection{run\_assoc()}
+{\footnotesize\ttfamily bool run\+\_\+assoc (\begin{DoxyParamCaption}\item[{int}]{a,  }\item[{int}]{b }\end{DoxyParamCaption})}
+
+Функция, которая формирует правило исходя из представленных 2х масок. Функция проходится по вектору \doxyref{существующих правил}{стр.}{guha_8cpp_add7f7fc0f2fc79ed57bc989835ace94a}, чтобы найти слабые составные правила или повтор, и если условия не нарушены вносит в него \doxyref{новое правило}{стр.}{structnoded}. 
+\begin{DoxyParams}{Аргументы}
+{\em a} & -\/ Маска А \\
+\hline
+{\em b} & -\/ Маска Б \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Истина если связь есть и она сильная, ложь если повтор, наложение масок, слабые составные элементы связи, или связь слабая 
+\end{DoxyReturn}
+
+
+См. определение в файле guha.\+cpp строка 149
+
+\mbox{\label{guha_8cpp_ae00e97702713dc84773cd0827b3e7700}} 
+\index{guha.cpp@{guha.cpp}!guha@{guha}}
+\index{guha@{guha}!guha.cpp@{guha.cpp}}
+\doxysubsubsection{guha()}
+{\footnotesize\ttfamily void guha (\begin{DoxyParamCaption}\item[{unsigned int}]{p = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Поиск правил. Функция использует вектор \doxyref{масок}{стр.}{guha_8hpp_a36f8a4502cf87d61df8cdb67be72c63e}, чтобы прогнать вектор \doxyref{объектов}{стр.}{guha_8hpp_a2093b3404f53534a4a86026be2b4e767}, и внести результаты в вектор \doxyref{правил}{стр.}{guha_8hpp_aec4062342e9026f60180e0dcda9ba365}. 
+\begin{DoxyParams}{Аргументы}
+{\em p} & -\/ Ограничение глубины прохода \\
+\hline
+\end{DoxyParams}
+
+
+См. определение в файле guha.\+cpp строка 177
+
+
+
+\doxysubsection{Переменные}
+\mbox{\label{guha_8cpp_a58d6373a15f6173120235e9c4e50d4d6}} 
+\index{guha.cpp@{guha.cpp}!all@{all}}
+\index{all@{all}!guha.cpp@{guha.cpp}}
+\doxysubsubsection{all}
+{\footnotesize\ttfamily float all =0.\+2}
+
+Пороговое количество пересечений 
+
+См. определение в файле guha.\+cpp строка 14
+
+\mbox{\label{guha_8cpp_a3c551846c1013197a7854e7d4e47c5ae}} 
+\index{guha.cpp@{guha.cpp}!character@{character}}
+\index{character@{character}!guha.cpp@{guha.cpp}}
+\doxysubsubsection{character}
+{\footnotesize\ttfamily float character =3}
+
+
+
+См. определение в файле guha.\+cpp строка 14
+
+\mbox{\label{guha_8cpp_a3d6c5f8002dc6dfd5ed37cb31fbe1a19}} 
+\index{guha.cpp@{guha.cpp}!depends@{depends}}
+\index{depends@{depends}!guha.cpp@{guha.cpp}}
+\doxysubsubsection{depends}
+{\footnotesize\ttfamily float depends =1.\+5}
+
+
+
+См. определение в файле guha.\+cpp строка 14
+
+\mbox{\label{guha_8cpp_aec4062342e9026f60180e0dcda9ba365}} 
+\index{guha.cpp@{guha.cpp}!rules@{rules}}
+\index{rules@{rules}!guha.cpp@{guha.cpp}}
+\doxysubsubsection{rules}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ rules =\{\}}
+
+Письменное представление правил, можно прочитать напрямую из вектора 
+
+См. определение в файле guha.\+cpp строка 24
+
+\mbox{\label{guha_8cpp_a9c4192866025823ecd5592526c757c0b}} 
+\index{guha.cpp@{guha.cpp}!names@{names}}
+\index{names@{names}!guha.cpp@{guha.cpp}}
+\doxysubsubsection{names}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ names =\{\}}
+
+
+
+См. определение в файле guha.\+cpp строка 24
+
+\mbox{\label{guha_8cpp_a2093b3404f53534a4a86026be2b4e767}} 
+\index{guha.cpp@{guha.cpp}!nodes@{nodes}}
+\index{nodes@{nodes}!guha.cpp@{guha.cpp}}
+\doxysubsubsection{nodes}
+{\footnotesize\ttfamily std\+::vector$<$int$>$ nodes}
+
+{\bfseries Инициализатор}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\{}
+\DoxyCodeLine{    1*1+1*2+1*4,}
+\DoxyCodeLine{    0*1+1*2+1*4,}
+\DoxyCodeLine{    0*1+1*2+0*4,}
+\DoxyCodeLine{    1*1+0*2+1*4,}
+\DoxyCodeLine{    1*1+0*2+1*4,}
+\DoxyCodeLine{    1*1+1*2+1*4,}
+\DoxyCodeLine{    1*1+0*2+0*4,}
+\DoxyCodeLine{    1*1+0*2+1*4,}
+\DoxyCodeLine{    0*1+1*2+0*4,}
+\DoxyCodeLine{    1*1+1*2+1*4}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+Объекты 
+
+См. определение в файле guha.\+cpp строка 25
+
+\mbox{\label{guha_8cpp_a36f8a4502cf87d61df8cdb67be72c63e}} 
+\index{guha.cpp@{guha.cpp}!msk@{msk}}
+\index{msk@{msk}!guha.cpp@{guha.cpp}}
+\doxysubsubsection{msk}
+{\footnotesize\ttfamily std\+::vector$<$int$>$ msk =\{1, 2, 4\}}
+
+
+
+См. определение в файле guha.\+cpp строка 36
+
+\mbox{\label{guha_8cpp_add7f7fc0f2fc79ed57bc989835ace94a}} 
+\index{guha.cpp@{guha.cpp}!assoc@{assoc}}
+\index{assoc@{assoc}!guha.cpp@{guha.cpp}}
+\doxysubsubsection{assoc}
+{\footnotesize\ttfamily std\+::vector$<$\textbf{ noded}$>$ assoc}
+
+Набор объектов правил 
+
+См. определение в файле guha.\+cpp строка 121
+
+\mbox{\label{guha_8cpp_a7071b0092ad8c5b57d6cc40c5f803df5}} 
+\index{guha.cpp@{guha.cpp}!rd@{rd}}
+\index{rd@{rd}!guha.cpp@{guha.cpp}}
+\doxysubsubsection{rd}
+{\footnotesize\ttfamily std\+::random\+\_\+device rd}
+
+Генератор случайных чисел (библиотечный) 
+
+См. определение в файле guha.\+cpp строка 123
+

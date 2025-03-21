@@ -1,0 +1,188 @@
+\doxysection{Структура noded}
+\label{structnoded}\index{noded@{noded}}
+
+
+Собиратель совпадений  
+
+
+\doxysubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ noded} (int \textbf{ a}, int \textbf{ b})
+\item 
+\textbf{ operator std\+::vector$<$ float $>$} () const
+\item 
+\textbf{ operator int} () const
+\item 
+\textbf{ operator bool} () const
+\item 
+\textbf{ operator std\+::string} () const
+\item 
+void \textbf{ operator+} (int o)
+\item 
+void \textbf{ operator()} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Открытые атрибуты}
+\begin{DoxyCompactItemize}
+\item 
+int \textbf{ a}
+\item 
+int \textbf{ b}
+\item 
+std\+::vector$<$ float $>$ \textbf{ rule} =\{0.\+0,0.\+0,0.\+0,0.\+0\}
+\item 
+std\+::string \textbf{ formatted} =\char`\"{}\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Считает количество пересечений, свободных атрибутов, и отсутствия обоих, составляя тем самым правило. 
+
+См. определение в файле guha.\+cpp строка 42
+
+
+
+\doxysubsection{Конструктор(ы)}
+\mbox{\label{structnoded_a84cd09915024a71f7add6947e41af012}} 
+\index{noded@{noded}!noded@{noded}}
+\index{noded@{noded}!noded@{noded}}
+\doxysubsubsection{noded()}
+{\footnotesize\ttfamily noded\+::noded (\begin{DoxyParamCaption}\item[{int}]{a,  }\item[{int}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Конструктор структуры 
+\begin{DoxyParams}{Аргументы}
+{\em a, b} & -\/ Первая и вторая маски \\
+\hline
+\end{DoxyParams}
+
+
+См. определение в файле guha.\+cpp строка 54
+
+
+
+\doxysubsection{Методы}
+\mbox{\label{structnoded_ab2b869d5f39472a29f2bb59b1b0f2220}} 
+\index{noded@{noded}!operator std::vector$<$ float $>$@{operator std::vector$<$ float $>$}}
+\index{operator std::vector$<$ float $>$@{operator std::vector$<$ float $>$}!noded@{noded}}
+\doxysubsubsection{operator std::vector$<$ float $>$()}
+{\footnotesize\ttfamily noded\+::operator std\+::vector$<$ float $>$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+\begin{DoxyReturn}{Возвращает}
+Нормализованный вектор правило 
+\end{DoxyReturn}
+
+
+См. определение в файле guha.\+cpp строка 58
+
+\mbox{\label{structnoded_a80c7280d7b62fde91f5f2c449fd85ad2}} 
+\index{noded@{noded}!operator int@{operator int}}
+\index{operator int@{operator int}!noded@{noded}}
+\doxysubsubsection{operator int()}
+{\footnotesize\ttfamily noded\+::operator int (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+Метод, возвращающий составную маску \begin{DoxyReturn}{Возвращает}
+Наложение масок a и b (a$\vert$b) 
+\end{DoxyReturn}
+
+
+См. определение в файле guha.\+cpp строка 63
+
+\mbox{\label{structnoded_a4342578b532ccc709caea8f7cd4c507e}} 
+\index{noded@{noded}!operator bool@{operator bool}}
+\index{operator bool@{operator bool}!noded@{noded}}
+\doxysubsubsection{operator bool()}
+{\footnotesize\ttfamily noded\+::operator bool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+Метод, возвращающий истину если правило сильное \begin{DoxyReturn}{Возвращает}
+Результат проверки на отсутствие спец. отношения в \doxyref{периоде}{стр.}{guha_8hpp_a3c551846c1013197a7854e7d4e47c5ae}. 
+\end{DoxyReturn}
+
+
+См. определение в файле guha.\+cpp строка 68
+
+\mbox{\label{structnoded_a4556c0fd79e0cc876c1a88d3a89778cc}} 
+\index{noded@{noded}!operator std::string@{operator std::string}}
+\index{operator std::string@{operator std::string}!noded@{noded}}
+\doxysubsubsection{operator std::string()}
+{\footnotesize\ttfamily noded\+::operator std\+::string (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+Метод, возвращающий правило в письменной форме, если количество пересечений больше \doxyref{минимума}{стр.}{guha_8hpp_a58d6373a15f6173120235e9c4e50d4d6}. \begin{DoxyReturn}{Возвращает}
+Письменное представление правила, которое получилось после обработки 
+\end{DoxyReturn}
+
+
+См. определение в файле guha.\+cpp строка 77
+
+\mbox{\label{structnoded_a837c936d097514d11c0bd34197bd53b7}} 
+\index{noded@{noded}!operator+@{operator+}}
+\index{operator+@{operator+}!noded@{noded}}
+\doxysubsubsection{operator+()}
+{\footnotesize\ttfamily void noded\+::operator+ (\begin{DoxyParamCaption}\item[{int}]{o }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Метод, добавляющий к правилу объект. 
+\begin{DoxyParams}{Аргументы}
+{\em o} & -\/ Объект (его атрибуты рассматриваются в бинарной форме) \\
+\hline
+\end{DoxyParams}
+
+
+См. определение в файле guha.\+cpp строка 85
+
+\mbox{\label{structnoded_aae081cf53fd2ac3ffdb8908b8db444af}} 
+\index{noded@{noded}!operator()@{operator()}}
+\index{operator()@{operator()}!noded@{noded}}
+\doxysubsubsection{operator()()}
+{\footnotesize\ttfamily void noded\+::operator() (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Метод, который анализирует правило и формирует письменный вывод. Задействует векторы \doxyref{масок}{стр.}{guha_8hpp_a36f8a4502cf87d61df8cdb67be72c63e} и \doxyref{имен}{стр.}{guha_8hpp_a9c4192866025823ecd5592526c757c0b}, чтобы сформировать имена для составной маски. По \doxyref{коэффициенту количества}{стр.}{guha_8hpp_a58d6373a15f6173120235e9c4e50d4d6}, \doxyref{коэффициенту характера}{стр.}{guha_8hpp_a3c551846c1013197a7854e7d4e47c5ae} и \doxyref{коэффициенту зависимости}{стр.}{guha_8hpp_a3d6c5f8002dc6dfd5ed37cb31fbe1a19} создает представление правила в письменной форме. 
+
+См. определение в файле guha.\+cpp строка 91
+
+
+
+\doxysubsection{Данные класса}
+\mbox{\label{structnoded_ae0e660cf2c823741e5e2554043978d8c}} 
+\index{noded@{noded}!a@{a}}
+\index{a@{a}!noded@{noded}}
+\doxysubsubsection{a}
+{\footnotesize\ttfamily int noded\+::a}
+
+Первая маска 
+
+См. определение в файле guha.\+cpp строка 46
+
+\mbox{\label{structnoded_ab28753c4be8d8bf1a080b8b41421e382}} 
+\index{noded@{noded}!b@{b}}
+\index{b@{b}!noded@{noded}}
+\doxysubsubsection{b}
+{\footnotesize\ttfamily int noded\+::b}
+
+Вторая маска 
+
+См. определение в файле guha.\+cpp строка 46
+
+\mbox{\label{structnoded_a70cd3b601b8c15740a66f793106b57ba}} 
+\index{noded@{noded}!rule@{rule}}
+\index{rule@{rule}!noded@{noded}}
+\doxysubsubsection{rule}
+{\footnotesize\ttfamily std\+::vector$<$float$>$ noded\+::rule =\{0.\+0,0.\+0,0.\+0,0.\+0\}}
+
+Правило по которому они связаны 
+
+См. определение в файле guha.\+cpp строка 47
+
+\mbox{\label{structnoded_a4f2ea7a9c24dc6fd547ed9ae10385a08}} 
+\index{noded@{noded}!formatted@{formatted}}
+\index{formatted@{formatted}!noded@{noded}}
+\doxysubsubsection{formatted}
+{\footnotesize\ttfamily std\+::string noded\+::formatted =\char`\"{}\char`\"{}}
+
+Письменное представление правила 
+
+См. определение в файле guha.\+cpp строка 48
+
+
+
+Объявления и описания членов структуры находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ guha.\+cpp}\end{DoxyCompactItemize}

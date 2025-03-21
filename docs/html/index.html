@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>GUHA: General Unary Hypotheses Automaton</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="afghg.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">GUHA
+   </div>
+   <div id="projectbrief">Общий унарный гипотетический автоматон</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('index.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="PageDoc"><div class="header">
+  <div class="headertitle">
+<div class="title">General Unary Hypotheses Automaton </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="anchor" id="md_T"></a> GUHA - это метод автоматической генерации гипотиз на основе эмпирических данных, то есть дата майнинга. Формируемые методом ответы из себя представляют код на языке dot, помещаемый в <em>graphviz</em> и формирующий граф взаимосвязей. Хотя это необязательно и можно вывести все в письменном виде.</p>
+<h3><a class="anchor" id="autotoc_md1"></a>
+Инструкция по эксплуатации</h3>
+<p>Для получения необходимых результатов нужно:</p>
+<ol type="1">
+<li>Заполнить вектор <b>nodes</b> числовыми значениями (атрибуты зашифрованы в бинарной форме числа),</li>
+<li>Запустить <b>mask_gen</b> с названиями атрибутов (в виде вектора строк),</li>
+<li>Запустить <b>guha</b> (можно с ограничениями),</li>
+<li>Вывести информацию из вектора <b>rules</b>.</li>
+</ol>
+<h3><a class="anchor" id="autotoc_md2"></a>
+Описание функциональности</h3>
+<p>Данная реализация позволяет в открытую изменять параметры системы и вносить данные.</p>
+<ul>
+<li>Вектор nodes и вещественные переменные <b>all</b>, <b>depends</b>, <b>character</b>; поддаются изменению напрямую.</li>
+<li>Вектор <b>rules</b> содержит в себе письменное описание всех ассоциаций.</li>
+<li>Вектор <b>names</b> и <b>msk</b> содержат в себе названия атрибутов и их маски. Однако их лучше заполнять с помощью функции <b>mask_gen</b></li>
+</ul>
+<p>Данная функциональность может быть дополнена по необходимости.</p>
+<p>Пример вывода: <img src="output.png" alt="" class="inline" title="Вывод для 10 объектов"/></p>
+<h3><a class="anchor" id="autotoc_md3"></a>
+Теория</h3>
+<p>GUHA - работает по принципу машины Тьюринга, то есть принимает на вход конвеер чисел и работает с их бинарной структурой. Каждое число является объектом с атрибутами, в роли которых выступают биты. Сами атрибуты вычленяются с помощью масок по формуле </p><p class="formulaDsp">
+\[ (o \wedge m) \equiv m \]
+</p>
+<p>, где m - это маска, а o - объект. Когда система составляет "правило", она считает количество членов содержащих оба, свободных членов множества A, свободных членов множества B, и не содержащих ни одного.</p>
+<center> <table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter" colspan="3"></th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">\   </td><td class="markdownTableBodyCenter"><p class="formulaDsp">
+\[ \phi \]
+</p>
+   </td><td class="markdownTableBodyCenter"><p class="formulaDsp">
+\[ \neg\phi \]
+</p>
+    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter"><p class="formulaDsp">
+\[ \psi \]
+</p>
+   </td><td class="markdownTableBodyCenter"><p class="formulaDsp">
+\[ \phi \wedge \psi \]
+</p>
+   </td><td class="markdownTableBodyCenter"><p class="formulaDsp">
+\[ \phi \not\rightarrow \psi \]
+</p>
+    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter"><p class="formulaDsp">
+\[ \neg\psi \]
+</p>
+   </td><td class="markdownTableBodyCenter"><p class="formulaDsp">
+\[ \psi \not\rightarrow \phi \]
+</p>
+   </td><td class="markdownTableBodyCenter"><p class="formulaDsp">
+\[ \phi \downarrow \psi \]
+</p>
+   </td></tr>
+</table>
+</center><center></center><p>Метод может работать на основе одной или нескольких из 4 функции, 2 импликационные (могут быть использованы как ассоциативные) и 2 ассоциативные. На данный момент в реализации учавствует <b>FIMPL</b>, но его достаточно для выявления характера связей и зависимостей, так ищутся 2 отношения 4х результатов <b>FIMPL</b> (ab, ac, bd, cd).</p>
+<p class="formulaDsp">
+\[ FIMPL(a, b) = {a \over a+b} : a&gt;all \]
+</p>
+<h3><a class="anchor" id="autotoc_md4"></a>
+Проблемы текущей реализации</h3>
+<p>Главной проблемой GUHA можно назвать использование теста Фишера (в этой реализации он не учавствует), который представляет из себя сумму отношений факториалов количества всех элементов. </p><p class="formulaDsp">
+\[ \sum^{min(b,c)}_{i=0}{(a+b)!(a+c)!(b+d)!(c+d)! \over m!(a+i)!(b-i)!(c-i)!(d+i)!} \leq\alpha \]
+</p>
+<p> Посчитать факториал от миллиарда практически невозможно, но именно столько обычно записей и хранится. А также LIMPL </p><p class="formulaDsp">
+\[\sum^{r}_{i=a}{\begin{pmatrix}{r \\ i}\end{pmatrix}p^i(1-p)^{r-i}} : r = a+b\]
+</p>
+<p>, который также работает с целыми значениями.</p>
+<p>Ограничения в 32 атрибута (тип int занимает 4 байта (32 бита)), связанное с тем, что используется бинарная сетка вместо вектора логических значений (bool).</p>
+<p>Сложность алгоритма зависит не от количества атрибутов или объектов, а от количества единиц в данных. Чем больше в данных связанных атрибутов, тем дольше система будет их выявлять, поэтому если атрибутов очень много лучше проставить ограничение на функцию guha, к примеру до 3 уровней.</p>
+<h3><a class="anchor" id="autotoc_md5"></a>
+Особенности</h3>
+<p>Метод GUHA является измененным методом Apriori, однако в отличии от Apriori, он считает не только количество конъюнкций, но еще количество коимпликаций и стрелок пирса. Так как во время расчетов работает switch (переадресация на нужную ячейку), система считает с примерно той же скоростью, но при этом вычленяет больше информации, которую можно использовать сразу. </p>
+</div></div><!-- PageDoc -->
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>

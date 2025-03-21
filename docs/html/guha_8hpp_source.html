@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>GUHA: Исходный файл guha.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="afghg.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">GUHA
+   </div>
+   <div id="projectbrief">Общий унарный гипотетический автоматон</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('guha_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">guha.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="guha_8hpp.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="guha_8hpp.html#a9c4192866025823ecd5592526c757c0b">    6</a></span>&#160;<span class="keyword">extern</span> std::vector&lt;std::string&gt; <a class="code" href="guha_8hpp.html#aec4062342e9026f60180e0dcda9ba365">rules</a>, <a class="code" href="guha_8hpp.html#a9c4192866025823ecd5592526c757c0b">names</a>; </div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="guha_8hpp.html#a36f8a4502cf87d61df8cdb67be72c63e">    9</a></span>&#160;<span class="keyword">extern</span> std::vector&lt;int&gt; <a class="code" href="guha_8hpp.html#a2093b3404f53534a4a86026be2b4e767">nodes</a>, <a class="code" href="guha_8hpp.html#a36f8a4502cf87d61df8cdb67be72c63e">msk</a>; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="guha_8hpp.html#a3c551846c1013197a7854e7d4e47c5ae">   13</a></span>&#160;<span class="keyword">extern</span> <span class="keywordtype">float</span> <a class="code" href="guha_8hpp.html#a58d6373a15f6173120235e9c4e50d4d6">all</a>, <a class="code" href="guha_8hpp.html#a3c551846c1013197a7854e7d4e47c5ae">character</a>, <a class="code" href="guha_8hpp.html#a3d6c5f8002dc6dfd5ed37cb31fbe1a19">depends</a>; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keywordtype">void</span> <a class="code" href="guha_8hpp.html#a0b15b3fe2b73391e3c158eeca0a31b17">rnd</a>(std::vector&lt;std::string&gt;, <span class="keywordtype">int</span>); </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keywordtype">void</span> <a class="code" href="guha_8hpp.html#ac89c7afa72cbfb2d471f47c2b7712421">mask_gen</a>(std::vector&lt;std::string&gt;); </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keywordtype">void</span> <a class="code" href="guha_8hpp.html#a2ec8f9904dd1cfbb08df7019c4b524f4">guha</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> p=0); </div>
+<div class="ttc" id="aguha_8hpp_html_a0b15b3fe2b73391e3c158eeca0a31b17"><div class="ttname"><a href="guha_8hpp.html#a0b15b3fe2b73391e3c158eeca0a31b17">rnd</a></div><div class="ttdeci">void rnd(std::vector&lt; std::string &gt;, int)</div><div class="ttdef"><b>Definition:</b> <a href="guha_8cpp_source.html#l00141">guha.cpp:141</a></div></div>
+<div class="ttc" id="aguha_8hpp_html_a2093b3404f53534a4a86026be2b4e767"><div class="ttname"><a href="guha_8hpp.html#a2093b3404f53534a4a86026be2b4e767">nodes</a></div><div class="ttdeci">std::vector&lt; int &gt; nodes</div><div class="ttdef"><b>Definition:</b> <a href="guha_8cpp_source.html#l00025">guha.cpp:25</a></div></div>
+<div class="ttc" id="aguha_8hpp_html_a2ec8f9904dd1cfbb08df7019c4b524f4"><div class="ttname"><a href="guha_8hpp.html#a2ec8f9904dd1cfbb08df7019c4b524f4">guha</a></div><div class="ttdeci">void guha(unsigned int p=0)</div><div class="ttdef"><b>Definition:</b> <a href="guha_8cpp_source.html#l00177">guha.cpp:177</a></div></div>
+<div class="ttc" id="aguha_8hpp_html_a36f8a4502cf87d61df8cdb67be72c63e"><div class="ttname"><a href="guha_8hpp.html#a36f8a4502cf87d61df8cdb67be72c63e">msk</a></div><div class="ttdeci">std::vector&lt; int &gt; msk</div><div class="ttdef"><b>Definition:</b> <a href="guha_8hpp_source.html#l00009">guha.hpp:9</a></div></div>
+<div class="ttc" id="aguha_8hpp_html_a3c551846c1013197a7854e7d4e47c5ae"><div class="ttname"><a href="guha_8hpp.html#a3c551846c1013197a7854e7d4e47c5ae">character</a></div><div class="ttdeci">float character</div><div class="ttdef"><b>Definition:</b> <a href="guha_8hpp_source.html#l00013">guha.hpp:13</a></div></div>
+<div class="ttc" id="aguha_8hpp_html_a3d6c5f8002dc6dfd5ed37cb31fbe1a19"><div class="ttname"><a href="guha_8hpp.html#a3d6c5f8002dc6dfd5ed37cb31fbe1a19">depends</a></div><div class="ttdeci">float depends</div><div class="ttdef"><b>Definition:</b> <a href="guha_8hpp_source.html#l00013">guha.hpp:13</a></div></div>
+<div class="ttc" id="aguha_8hpp_html_a58d6373a15f6173120235e9c4e50d4d6"><div class="ttname"><a href="guha_8hpp.html#a58d6373a15f6173120235e9c4e50d4d6">all</a></div><div class="ttdeci">float all</div><div class="ttdef"><b>Definition:</b> <a href="guha_8cpp_source.html#l00014">guha.cpp:14</a></div></div>
+<div class="ttc" id="aguha_8hpp_html_a9c4192866025823ecd5592526c757c0b"><div class="ttname"><a href="guha_8hpp.html#a9c4192866025823ecd5592526c757c0b">names</a></div><div class="ttdeci">std::vector&lt; std::string &gt; names</div><div class="ttdef"><b>Definition:</b> <a href="guha_8hpp_source.html#l00006">guha.hpp:6</a></div></div>
+<div class="ttc" id="aguha_8hpp_html_ac89c7afa72cbfb2d471f47c2b7712421"><div class="ttname"><a href="guha_8hpp.html#ac89c7afa72cbfb2d471f47c2b7712421">mask_gen</a></div><div class="ttdeci">void mask_gen(std::vector&lt; std::string &gt;)</div><div class="ttdef"><b>Definition:</b> <a href="guha_8cpp_source.html#l00134">guha.cpp:134</a></div></div>
+<div class="ttc" id="aguha_8hpp_html_aec4062342e9026f60180e0dcda9ba365"><div class="ttname"><a href="guha_8hpp.html#aec4062342e9026f60180e0dcda9ba365">rules</a></div><div class="ttdeci">std::vector&lt; std::string &gt; rules</div><div class="ttdef"><b>Definition:</b> <a href="guha_8cpp_source.html#l00024">guha.cpp:24</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_2ea739fe366135ec15f610d081b5ff33.html">CPP</a></li><li class="navelem"><a class="el" href="guha_8hpp.html">guha.hpp</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>
