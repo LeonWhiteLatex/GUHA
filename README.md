@@ -4,4 +4,6 @@
 Алгоритм на питоне находится в директории PY, на C++ в директории CPP.
 
 Пример работы программы:
+
+
 <img width="507" height="891" alt="image" src="https://github.com/user-attachments/assets/9174f41c-2c9d-4434-a939-d559890dce7e" />
