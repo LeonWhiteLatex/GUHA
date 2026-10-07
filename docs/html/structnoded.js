@@ -1,6 +1,6 @@
 var structnoded =
 [
-    [ "noded", "structnoded.html#a84cd09915024a71f7add6947e41af012", null ],
+    [ "noded", "structnoded.html#abe87380e23ca27c8e26ede51771524c9", null ],
     [ "operator std::vector< float >", "structnoded.html#ab2b869d5f39472a29f2bb59b1b0f2220", null ],
     [ "operator int", "structnoded.html#a80c7280d7b62fde91f5f2c449fd85ad2", null ],
     [ "operator bool", "structnoded.html#a4342578b532ccc709caea8f7cd4c507e", null ],
@@ -9,6 +9,7 @@ var structnoded =
     [ "operator()", "structnoded.html#aae081cf53fd2ac3ffdb8908b8db444af", null ],
     [ "a", "structnoded.html#ae0e660cf2c823741e5e2554043978d8c", null ],
     [ "b", "structnoded.html#ab28753c4be8d8bf1a080b8b41421e382", null ],
+    [ "lvl", "structnoded.html#aef86ad95bf1e58369b3e21fffc139004", null ],
     [ "rule", "structnoded.html#a70cd3b601b8c15740a66f793106b57ba", null ],
     [ "formatted", "structnoded.html#a4f2ea7a9c24dc6fd547ed9ae10385a08", null ]
 ];

@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['names_14',['names',['../guha_8cpp.html#a9c4192866025823ecd5592526c757c0b',1,'names():&#160;guha.cpp'],['../guha_8hpp.html#a9c4192866025823ecd5592526c757c0b',1,'names():&#160;guha.hpp']]],
-  ['noded_15',['noded',['../structnoded.html',1,'noded'],['../structnoded.html#a84cd09915024a71f7add6947e41af012',1,'noded::noded()']]],
-  ['nodes_16',['nodes',['../guha_8cpp.html#a2093b3404f53534a4a86026be2b4e767',1,'nodes():&#160;guha.cpp'],['../guha_8hpp.html#a2093b3404f53534a4a86026be2b4e767',1,'nodes():&#160;guha.cpp']]],
-  ['norm_17',['norm',['../guha_8cpp.html#a8b668b795173400553446a1a065bc6c7',1,'guha.cpp']]]
+  ['mask_5fgen_14',['mask_gen',['../guha_8cpp.html#aa4212745d229ec5541bfd791d12b82c3',1,'mask_gen(std::vector&lt; std::string &gt; n):&#160;guha.cpp'],['../guha_8hpp.html#ac89c7afa72cbfb2d471f47c2b7712421',1,'mask_gen(std::vector&lt; std::string &gt;):&#160;guha.cpp']]],
+  ['min_15',['min',['../guha_8cpp.html#a82fe34140a419a1f19200091b808e4ad',1,'guha.cpp']]],
+  ['msk_16',['msk',['../guha_8cpp.html#a36f8a4502cf87d61df8cdb67be72c63e',1,'msk():&#160;guha.cpp'],['../guha_8hpp.html#a36f8a4502cf87d61df8cdb67be72c63e',1,'msk():&#160;guha.hpp']]]
 ];

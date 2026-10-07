@@ -8,7 +8,7 @@
 \doxysubsection*{Открытые члены}
 \begin{DoxyCompactItemize}
 \item 
-\textbf{ noded} (int \textbf{ a}, int \textbf{ b})
+\textbf{ noded} (int \textbf{ a}, int \textbf{ b}, int \textbf{ lvl})
 \item 
 \textbf{ operator std\+::vector$<$ float $>$} () const
 \item 
@@ -29,6 +29,8 @@ int \textbf{ a}
 \item 
 int \textbf{ b}
 \item 
+int \textbf{ lvl}
+\item 
 std\+::vector$<$ float $>$ \textbf{ rule} =\{0.\+0,0.\+0,0.\+0,0.\+0\}
 \item 
 std\+::string \textbf{ formatted} =\char`\"{}\char`\"{}
@@ -38,16 +40,16 @@ std\+::string \textbf{ formatted} =\char`\"{}\char`\"{}
 \doxysubsection{Подробное описание}
 Считает количество пересечений, свободных атрибутов, и отсутствия обоих, составляя тем самым правило. 
 
-См. определение в файле guha.\+cpp строка 42
+См. определение в файле guha.\+cpp строка 98
 
 
 
 \doxysubsection{Конструктор(ы)}
-\mbox{\label{structnoded_a84cd09915024a71f7add6947e41af012}} 
+\mbox{\label{structnoded_abe87380e23ca27c8e26ede51771524c9}} 
 \index{noded@{noded}!noded@{noded}}
 \index{noded@{noded}!noded@{noded}}
 \doxysubsubsection{noded()}
-{\footnotesize\ttfamily noded\+::noded (\begin{DoxyParamCaption}\item[{int}]{a,  }\item[{int}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily noded\+::noded (\begin{DoxyParamCaption}\item[{int}]{a,  }\item[{int}]{b,  }\item[{int}]{lvl }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 Конструктор структуры 
 \begin{DoxyParams}{Аргументы}
@@ -56,7 +58,7 @@ std\+::string \textbf{ formatted} =\char`\"{}\char`\"{}
 \end{DoxyParams}
 
 
-См. определение в файле guha.\+cpp строка 54
+См. определение в файле guha.\+cpp строка 111
 
 
 
@@ -72,7 +74,7 @@ std\+::string \textbf{ formatted} =\char`\"{}\char`\"{}
 \end{DoxyReturn}
 
 
-См. определение в файле guha.\+cpp строка 58
+См. определение в файле guha.\+cpp строка 115
 
 \mbox{\label{structnoded_a80c7280d7b62fde91f5f2c449fd85ad2}} 
 \index{noded@{noded}!operator int@{operator int}}
@@ -85,7 +87,7 @@ std\+::string \textbf{ formatted} =\char`\"{}\char`\"{}
 \end{DoxyReturn}
 
 
-См. определение в файле guha.\+cpp строка 63
+См. определение в файле guha.\+cpp строка 120
 
 \mbox{\label{structnoded_a4342578b532ccc709caea8f7cd4c507e}} 
 \index{noded@{noded}!operator bool@{operator bool}}
@@ -98,7 +100,7 @@ std\+::string \textbf{ formatted} =\char`\"{}\char`\"{}
 \end{DoxyReturn}
 
 
-См. определение в файле guha.\+cpp строка 68
+См. определение в файле guha.\+cpp строка 125
 
 \mbox{\label{structnoded_a4556c0fd79e0cc876c1a88d3a89778cc}} 
 \index{noded@{noded}!operator std::string@{operator std::string}}
@@ -111,7 +113,7 @@ std\+::string \textbf{ formatted} =\char`\"{}\char`\"{}
 \end{DoxyReturn}
 
 
-См. определение в файле guha.\+cpp строка 77
+См. определение в файле guha.\+cpp строка 132
 
 \mbox{\label{structnoded_a837c936d097514d11c0bd34197bd53b7}} 
 \index{noded@{noded}!operator+@{operator+}}
@@ -126,7 +128,7 @@ std\+::string \textbf{ formatted} =\char`\"{}\char`\"{}
 \end{DoxyParams}
 
 
-См. определение в файле guha.\+cpp строка 85
+См. определение в файле guha.\+cpp строка 138
 
 \mbox{\label{structnoded_aae081cf53fd2ac3ffdb8908b8db444af}} 
 \index{noded@{noded}!operator()@{operator()}}
@@ -136,7 +138,7 @@ std\+::string \textbf{ formatted} =\char`\"{}\char`\"{}
 
 Метод, который анализирует правило и формирует письменный вывод. Задействует векторы \doxyref{масок}{стр.}{guha_8hpp_a36f8a4502cf87d61df8cdb67be72c63e} и \doxyref{имен}{стр.}{guha_8hpp_a9c4192866025823ecd5592526c757c0b}, чтобы сформировать имена для составной маски. По \doxyref{коэффициенту количества}{стр.}{guha_8hpp_a58d6373a15f6173120235e9c4e50d4d6}, \doxyref{коэффициенту характера}{стр.}{guha_8hpp_a3c551846c1013197a7854e7d4e47c5ae} и \doxyref{коэффициенту зависимости}{стр.}{guha_8hpp_a3d6c5f8002dc6dfd5ed37cb31fbe1a19} создает представление правила в письменной форме. 
 
-См. определение в файле guha.\+cpp строка 91
+См. определение в файле guha.\+cpp строка 144
 
 
 
@@ -149,7 +151,7 @@ std\+::string \textbf{ formatted} =\char`\"{}\char`\"{}
 
 Первая маска 
 
-См. определение в файле guha.\+cpp строка 46
+См. определение в файле guha.\+cpp строка 102
 
 \mbox{\label{structnoded_ab28753c4be8d8bf1a080b8b41421e382}} 
 \index{noded@{noded}!b@{b}}
@@ -159,7 +161,17 @@ std\+::string \textbf{ formatted} =\char`\"{}\char`\"{}
 
 Вторая маска 
 
-См. определение в файле guha.\+cpp строка 46
+См. определение в файле guha.\+cpp строка 102
+
+\mbox{\label{structnoded_aef86ad95bf1e58369b3e21fffc139004}} 
+\index{noded@{noded}!lvl@{lvl}}
+\index{lvl@{lvl}!noded@{noded}}
+\doxysubsubsection{lvl}
+{\footnotesize\ttfamily int noded\+::lvl}
+
+$<$Уровень 
+
+См. определение в файле guha.\+cpp строка 103
 
 \mbox{\label{structnoded_a70cd3b601b8c15740a66f793106b57ba}} 
 \index{noded@{noded}!rule@{rule}}
@@ -169,7 +181,7 @@ std\+::string \textbf{ formatted} =\char`\"{}\char`\"{}
 
 Правило по которому они связаны 
 
-См. определение в файле guha.\+cpp строка 47
+См. определение в файле guha.\+cpp строка 104
 
 \mbox{\label{structnoded_a4f2ea7a9c24dc6fd547ed9ae10385a08}} 
 \index{noded@{noded}!formatted@{formatted}}
@@ -179,7 +191,7 @@ std\+::string \textbf{ formatted} =\char`\"{}\char`\"{}
 
 Письменное представление правила 
 
-См. определение в файле guha.\+cpp строка 48
+См. определение в файле guha.\+cpp строка 105
 
 
 

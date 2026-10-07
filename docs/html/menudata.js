@@ -33,6 +33,15 @@ var menudata={children:[
 {text:"Файлы",url:"files.html",children:[
 {text:"Файлы",url:"files.html"},
 {text:"Список членов всех файлов",url:"globals.html",children:[
-{text:"Указатель",url:"globals.html"},
+{text:"Указатель",url:"globals.html",children:[
+{text:"a",url:"globals.html#index_a"},
+{text:"c",url:"globals.html#index_c"},
+{text:"d",url:"globals.html#index_d"},
+{text:"f",url:"globals.html#index_f"},
+{text:"g",url:"globals.html#index_g"},
+{text:"m",url:"globals.html#index_m"},
+{text:"n",url:"globals.html#index_n"},
+{text:"o",url:"globals.html#index_o"},
+{text:"r",url:"globals.html#index_r"}]},
 {text:"Функции",url:"globals_func.html"},
 {text:"Переменные",url:"globals_vars.html"}]}]}]}
