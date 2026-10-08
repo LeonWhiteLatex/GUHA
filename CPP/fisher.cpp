@@ -10,8 +10,12 @@ int rn(int a, int b){
 	std::mt19937 mt(rd()); return dist(mt);
 }
 
-double min(double a, double b){
+int min(int a, int b){
 	return (a<b)? a:b;
+}
+
+int mean(int a, int b, int c){
+	return (a+b+c)/3.0;
 }
 
 #include <iostream>
@@ -22,29 +26,53 @@ double fFET(double a, double b, double c, double d){
 	int I; for(I=start; I<end; I++){
 		double K=std::exp(initial-(SLG(a+I+1)+SLG(b-I+1)+SLG(c-I+1)+SLG(d+I+1)));
 		if(K>observed) break; sum+=K;
-	}for(int i=end; i>=I; i--){
+	}for(int i=end; i>=start; i--){
 		double K=std::exp(initial-(SLG(a+i+1)+SLG(b-i+1)+SLG(c-i+1)+SLG(d+i+1)));
 		if(K>observed) break; sum+=K;
 	}return sum;
 }
 
 double coeff(double& a, double& b, double& c, double& d){
-	int start=-min(a,d), end=min(b,c), period=end-start; double eff=10000.0/period;
+	int start=-min(a,d), end=min(b,c), period=end-start; double eff=1000.0/period;
 	a=(int)(a*eff);b=(int)(b*eff);c=(int)(c*eff);d=(int)(d*eff); return eff;
 }
 
 double afFET(double a, double b, double c, double d){ coeff(a,b,c,d); return fFET(a,b,c,d); }
 
-bool FET(double a, double b, double c, double d){ return fFET(a,b,c,d)>0.05; }
-bool aFET(double a, double b, double c, double d){ return afFET(a,b,c,d)>0.05; }
+bool FET(double a, double b, double c, double d){ return fFET(a,b,c,d)<0.0005; }
+bool aFET(double a, double b, double c, double d){ return afFET(a,b,c,d)<0.0005; }
+
+bool cFET(double a, double b, double c, double d){
+	double meaner;
+	if(!aFET(a,b,c,d)) return 0;
+	meaner=mean(a,b,c);
+	if(!aFET(a,b,c,meaner)) return 0;
+	meaner=mean(a,b,d);
+	if(!aFET(a,b,meaner,d)) return 0;
+	meaner=mean(a,c,d);
+	if(!aFET(a,meaner,c,d)) return 0;
+	meaner=mean(b,c,d);
+	if(!aFET(meaner,b,c,d)) return 0;
+	return 1;
+}
 
 #ifdef TESTING
 #include <iostream>
+void putout(double a, double b, double c, double d){
+	double meaner=(a+b+c+d);
+	std::cout<<a<<" "<<b<<" "<<c<<" "<<d<<"\n";
+}
+
 int main(){
-	int count=0, counta=0;
-	double a=rn(0,500000),b=rn(0,500000),c=rn(0,500000),d=rn(0,500000);
-	for(unsigned int i=0; i<1000; i++,a=rn(0,500000),b=rn(0,500000),c=rn(0,500000),d=rn(0,500000)){
-		count+=FET(a,b,c,d); counta+=aFET(a,b,c,d); std::cout<<i<<"\n";
-	}std::cout<<"without: "<<count<<"\nwith: "<<counta<<"\n";
+	int county=0, p1=0,p2=0,pc1=0, pc2=0;
+	double a=rn(400,50000),b=rn(400,50000),c=rn(400,50000),d=rn(400,50000);
+	for(unsigned int i=0; i<10000; i++,a=rn(400,50000),b=rn(400,50000),c=rn(400,50000),d=rn(400,50000)){
+		county+=((p1=aFET(a,b,c,d))==(p2=cFET(a,b,c,d))); 
+		pc1+=p1; pc2+=p2;
+		if(p1) { putout(a,b,c,d); std::cout<<"FET: "<<p1<<"; context FET: "<<p2<<"\n";
+					std::cout<<afFET(a,b,c,d)<<"\n\n"; }
+	}
+	std::cout<<"precision: "<<1.0*county/100.0<<"%\n";
+	std::cout<<"FET: "<<1.0*pc1/100.0<<"%; context FET:"<<1.0*pc2/100.0<<"%\n";
 }
 #endif
