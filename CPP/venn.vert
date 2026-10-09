@@ -1,7 +1,7 @@
 #version 430
 
 layout(std140, binding=0) uniform woof{
-	vec4 colors;
+	vec4 colors; vec4 params;
 };
 layout(std140, binding=1) uniform square{
 	vec4 pootis[7];

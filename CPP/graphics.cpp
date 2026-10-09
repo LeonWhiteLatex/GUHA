@@ -20,12 +20,13 @@ void *ptr_ubo=0, *ptr_square=0, *ptr_buffdog=0, *ptr_textor=0,
 GLbitfield PRW=GL_MAP_PERSISTENT_BIT|GL_MAP_READ_BIT|GL_MAP_WRITE_BIT;
 short pos=0;
 
-void output(std::vector<int> t){ //std::cout<<"colors: ";
-	//for(auto i:t) std::cout<<i<<" "; std::cout<<"\n";
+void output(std::vector<int> t){
 	std::vector<float> T{(float)t[0],(float)t[1],(float)t[2],(float)t[3]}; float n=0.0;
 	for(unsigned int i=0; i<4; i++) n+=T[i];
 	for(unsigned int i=0; i<4; i++) T[i]/=n;
-	memcpy((char*)ptr_ubo,&T[0], 16);
+	T.push_back(t[4]);T.push_back(t[5]);
+	for(auto i:T) std::cout<<i<<" ";std::cout<<"\n";
+	memcpy((char*)ptr_ubo,&T[0], 24);
 }
 
 int mean(std::vector<int> t, unsigned int p){ unsigned int n=0; 
@@ -33,8 +34,7 @@ int mean(std::vector<int> t, unsigned int p){ unsigned int n=0;
 }
 
 std::vector<int> diagram={0,0,0,0}, reserve=diagram, etalon=diagram;
-int position=0; bool stats=0;
-std::vector<std::string> kiwi{"11", "B", "00", "A"};
+int position=0; bool stats=0; std::vector<std::string> kiwi{"11", "B", "00", "A"};
 void get_key(GLFWwindow* w, int key, int sc, int act, int mods){
 	if(act==GLFW_RELEASE){
 		switch(key){
@@ -54,6 +54,7 @@ void get_key(GLFWwindow* w, int key, int sc, int act, int mods){
 			default: break;
 		}kiwi=get_names(pos);
 		if(stats) diagram[0]=mean(reserve,0);
+		diagram.push_back(stats);
 		output(diagram);
 	}
 }
@@ -151,7 +152,7 @@ public:
 		glGenVertexArrays(NVAO,vao); glBindVertexArray(vao[0]);
 		glGenBuffers(4, ubo);
 		glBindBuffer(GL_UBO, ubo[0]); glBindBufferBase(GL_UBO,0,ubo[0]);
-		glBufferStorage(GL_UBO,16,0,PRW); ptr_ubo=glMapBufferRange(GL_UBO,0,16,PRW);
+		glBufferStorage(GL_UBO,24,0,PRW); ptr_ubo=glMapBufferRange(GL_UBO,0,24,PRW);
 		glBindBuffer(GL_UBO, ubo[1]); glBindBufferBase(GL_UBO,1,ubo[1]);
 		glBufferStorage(GL_UBO,112,0,PRW); ptr_square=glMapBufferRange(GL_UBO,0,112,PRW);
 		float the[28]={

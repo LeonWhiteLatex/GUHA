@@ -140,7 +140,7 @@ void guha(unsigned int a){ assoc.clear();
 std::vector<int> get_node(int t){
 	if(t<0) return std::vector<int>{static_cast<int>(t)};
 	if(t>=assoc.size()) return std::vector<int>{static_cast<int>(t-assoc.size()+1)};
-	return std::vector<int>(assoc[t]);
+	std::vector<int> PP(assoc[t]); PP.push_back((bool)assoc[t]); return PP;
 }
 
 std::vector<std::string> get_names(long unsigned int t){ 
