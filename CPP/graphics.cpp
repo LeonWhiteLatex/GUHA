@@ -25,7 +25,6 @@ void output(std::vector<int> t){
 	for(unsigned int i=0; i<4; i++) n+=T[i];
 	for(unsigned int i=0; i<4; i++) T[i]/=n;
 	T.push_back(t[4]);T.push_back(t[5]);
-	for(auto i:T) std::cout<<i<<" ";std::cout<<"\n";
 	memcpy((char*)ptr_ubo,&T[0], 24);
 }
 
