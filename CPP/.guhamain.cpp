@@ -41,7 +41,7 @@ int main(){
 	std::cout<<"\n\n";
 	start=NOW;
 	
-	guha(3); //построение правил
+	guha(1); //построение правил
 	
 	end=NOW;
 	

@@ -1,4 +1,5 @@
 #pragma once
 
-bool FET(double,double,double,double);
-
+bool FET(int,int,int,int);
+bool aFET(int,int,int,int);
+bool cFET(int,int,int,int);

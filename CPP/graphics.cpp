@@ -28,8 +28,8 @@ void output(std::vector<int> t){ //std::cout<<"colors: ";
 	memcpy((char*)ptr_ubo,&T[0], 16);
 }
 
-int min(std::vector<int> t, unsigned int p){ unsigned int c=-1; 
-	for(unsigned int i=0;i<t.size();i++) if(i==p) continue; else if(t[i]<c) c=i; return c;
+int mean(std::vector<int> t, unsigned int p){ unsigned int n=0; 
+	for(unsigned int i=0;i<t.size();i++) if(i==p) continue; else n+=t[i]; return n/(t.size()-1);
 }
 
 std::vector<int> diagram={0,0,0,0}, reserve=diagram, etalon=diagram;
@@ -47,16 +47,13 @@ void get_key(GLFWwindow* w, int key, int sc, int act, int mods){
 		}if(position>3) position=0; else if(position<0) position=3;
 		if(diagram.size()<2){ pos-=diagram[0]; etalon=diagram=reserve; return; }
 		reserve=diagram;
-		std::cout<<position<<"\n";
 		switch(position){
 			case 1: diagram[0]=reserve[1]; diagram[1]=reserve[3]; diagram[2]=reserve[0]; diagram[3]=reserve[2]; break;
 			case 2: diagram[0]=reserve[3]; diagram[1]=reserve[2]; diagram[2]=reserve[1]; diagram[3]=reserve[0]; break;
 			case 3: diagram[0]=reserve[2]; diagram[1]=reserve[0]; diagram[2]=reserve[3]; diagram[3]=reserve[1]; break;
 			default: break;
-		}
-		//diagram=etalon;
-		kiwi=get_names(pos);
-		if(stats) diagram[0]=min(reserve,0);
+		}kiwi=get_names(pos);
+		if(stats) diagram[0]=mean(reserve,0);
 		output(diagram);
 	}
 }

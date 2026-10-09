@@ -13,42 +13,42 @@ std::vector<float> norm(std::vector<float> v){
 }
 
 float FIMPLE(float a, float b){
-	if(a<all) return 0.0;
+	//if(a<all) return 0.0;
 	return a/(a+b);
 }
 
 std::vector<std::string> rules={}, names={};
 std::vector<int> nodes={
-	8*1+4*1+2*0+1*0,
-	8*1+4*1+2*0+1*0,
-	8*1+4*0+2*0+1*1,
 	8*0+4*0+2*1+1*1,
-	8*1+4*0+2*1+1*0,
+	8*0+4*0+2*1+1*1,
+	8*1+4*0+2*0+1*1,
+	8*1+4*1+2*0+1*0,
+	8*0+4*1+2*0+1*1,
 	8*1+4*0+2*0+1*1,
 	8*0+4*1+2*1+1*0,
-	8*1+4*1+2*1+1*0,
-	8*0+4*1+2*0+1*1,
 	8*0+4*1+2*1+1*1,
+	8*1+4*0+2*1+1*0,
 	8*1+4*1+2*1+1*0,
-	8*0+4*0+2*1+1*1,
-	8*0+4*0+2*1+1*1,
-	8*0+4*0+2*1+1*1,
-	8*0+4*0+2*1+1*0,
+	8*0+4*1+2*1+1*1,
+	8*1+4*1+2*0+1*0,
+	8*1+4*1+2*0+1*0,
+	8*1+4*1+2*0+1*0,
+	8*0+4*1+2*0+1*0,
 	8*0+4*1+2*1+1*0,
 	8*0+4*0+2*0+1*0,
-	8*0+4*0+2*1+1*0,
 	8*0+4*1+2*0+1*0,
-	8*0+4*1+2*1+1*1,
-	8*1+4*0+2*0+1*0,
-	8*0+4*0+2*1+1*1,
-	8*0+4*0+2*1+1*1,
-	8*0+4*0+2*1+1*1,
-	8*0+4*1+2*1+1*1,
-	8*0+4*1+2*1+1*1,
-	8*0+4*1+2*1+1*1,
-	8*0+4*0+2*1+1*1,
+	8*0+4*0+2*1+1*0,
+	8*1+4*1+2*1+1*0,
+	8*0+4*0+2*0+1*1,
+	8*1+4*1+2*0+1*0,
+	8*1+4*1+2*0+1*0,
+	8*1+4*1+2*0+1*0,
+	8*1+4*1+2*1+1*0,
+	8*1+4*1+2*1+1*0,
+	8*1+4*1+2*1+1*0,
+	8*1+4*1+2*0+1*0,
 	8*1+4*1+2*1+1*1,
-	8*1+4*0+2*0+1*0,
+	8*0+4*0+2*0+1*1,
 }, msk={1, 2, 4, 8};
 
 struct noded{
@@ -65,15 +65,16 @@ struct noded{
 	explicit operator std::vector<float>() const{ return norm(rule); } 
 	explicit operator std::vector<int>() const{ return std::vector<int>{(int)rule[0],(int)rule[1],(int)rule[2],(int)rule[3]}; } 
 	explicit operator int() const{ return a|b; }
-	explicit operator bool() const{ return FET(rule[3],rule[2],rule[1],rule[0])<all; }
+	explicit operator bool() const{ return cFET(rule[3],rule[2],rule[1],rule[0]); }
 	explicit operator std::string() const{return formatted;}
 	explicit operator std::vector<std::string>() const{ return std::vector<std::string>{"11",name2,"00",name1};}
 	void operator+(int o){ bool phi=((a&o)==a), psi=((b&o)==b); rule[phi|(psi<<1)]++; }
 	void operator()(){
 		if(!((rule[3]+rule[1]) && (rule[3]+rule[2]))) return;
-		std::vector<float> nn=norm(rule); if(nn[3]<all) return;
+		std::vector<float> nn=norm(rule); //if(nn[3]<all) return;
 		
-		float fat=FET(rule[3],rule[2],rule[1],rule[0]), AB=FIMPLE(nn[3],nn[2]), AC=FIMPLE(nn[3],nn[1]),
+		bool fat=cFET(rule[3],rule[2],rule[1],rule[0]);
+		float AB=FIMPLE(nn[3],nn[2]), AC=FIMPLE(nn[3],nn[1]),
 		DB=FIMPLE(nn[2],nn[0]), DC=FIMPLE(nn[1],nn[0]),
 		AD=(AB*AC)/(DB*DC),
 		T=(AD>=1)? AB/AC:DC/DB;

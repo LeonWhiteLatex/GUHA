@@ -1,25 +1,14 @@
 #include "fisher.hpp"
 #include <cmath>
-#include <random>
 
 #define SLG std::lgamma
 
-std::random_device rd;
-int rn(int a, int b){
-	std::uniform_int_distribution<int> dist(a,b);
-	std::mt19937 mt(rd()); return dist(mt);
-}
+int min(int a, int b){ return (a<b)? a:b; }
 
-int min(int a, int b){
-	return (a<b)? a:b;
-}
-
-int mean(int a, int b, int c){
-	return (a+b+c)/3.0;
-}
+int mean(int a, int b, int c){ return (a+b+c)/3.0; }
 
 #include <iostream>
-double fFET(double a, double b, double c, double d){
+double fFET(int a, int b, int c, int d){
 	int start=-min(a,d), end=min(b,c), period=end-start; double sum=0,
 	initial=SLG(a+b+1)+SLG(a+c+1)+SLG(d+c+1)+SLG(b+d+1)-SLG(a+b+c+d+1),
 	observed=std::exp(initial-(SLG(a+1)+SLG(b+1)+SLG(c+1)+SLG(d+1)));
@@ -32,35 +21,38 @@ double fFET(double a, double b, double c, double d){
 	}return sum;
 }
 
-double coeff(double& a, double& b, double& c, double& d){
-	int start=-min(a,d), end=min(b,c), period=end-start; double eff=1000.0/period;
+double coeff(int& a, int& b, int& c, int& d){
+	int start=-min(a,d), end=min(b,c), period=end-start; double eff=1000.0/((float)period);
 	a=(int)(a*eff);b=(int)(b*eff);c=(int)(c*eff);d=(int)(d*eff); return eff;
 }
 
-double afFET(double a, double b, double c, double d){ coeff(a,b,c,d); return fFET(a,b,c,d); }
+double afFET(int a, int b, int c, int d){ coeff(a,b,c,d); return fFET(a,b,c,d); }
 
-bool FET(double a, double b, double c, double d){ return fFET(a,b,c,d)<0.0005; }
-bool aFET(double a, double b, double c, double d){ return afFET(a,b,c,d)<0.0005; }
+bool FET(int a, int b, int c, int d){ return fFET(a,b,c,d)<0.0005; }
+bool aFET(int a, int b, int c, int d){ return afFET(a,b,c,d)<0.0005; }
 
-bool cFET(double a, double b, double c, double d){
-	double meaner;
-	if(!aFET(a,b,c,d)) return 0;
-	meaner=mean(a,b,c);
-	if(!aFET(a,b,c,meaner)) return 0;
-	meaner=mean(a,b,d);
-	if(!aFET(a,b,meaner,d)) return 0;
-	meaner=mean(a,c,d);
-	if(!aFET(a,meaner,c,d)) return 0;
-	meaner=mean(b,c,d);
-	if(!aFET(meaner,b,c,d)) return 0;
+bool cFET(int a, int b, int c, int d){
+	int meaner; if(!aFET(a,b,c,d)) return 0;
+	meaner=mean(a,b,c); if(!aFET(a,b,c,meaner)) return 0;
+	meaner=mean(a,b,d); if(!aFET(a,b,meaner,d)) return 0;
+	meaner=mean(a,c,d); if(!aFET(a,meaner,c,d)) return 0;
+	meaner=mean(b,c,d); if(!aFET(meaner,b,c,d)) return 0;
 	return 1;
 }
 
 #ifdef TESTING
 #include <iostream>
+#include <random>
+
 void putout(double a, double b, double c, double d){
 	double meaner=(a+b+c+d);
 	std::cout<<a<<" "<<b<<" "<<c<<" "<<d<<"\n";
+}
+
+std::random_device rd;
+int rn(int a, int b){
+	std::uniform_int_distribution<int> dist(a,b);
+	std::mt19937 mt(rd()); return dist(mt);
 }
 
 int main(){
